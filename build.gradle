@@ -1,10 +1,11 @@
 plugins {
-    id 'net.fabricmc.loom' version '1.5.0'
+    id 'net.fabricmc.loom' version '2.0.0'
     id 'maven-publish'
 }
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://maven.fabricmc.net/") }
 }
 
 dependencies {
@@ -14,7 +15,7 @@ dependencies {
 }
 
 minecraft {
-    version = "1.21.11"
+    version = "2021.11"
     mappings {
         channel = "official"
         version = "1.21.11"
