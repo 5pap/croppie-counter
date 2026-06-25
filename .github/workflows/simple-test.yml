@@ -1,0 +1,45 @@
+name: Super Simple Build Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: List files
+        run: |
+          echo "Files in repository:"
+          ls -la
+          echo ""
+          echo "Gradle files:"
+          ls -la *.gradle *.gradle.kts 2>/dev/null || echo "No gradle files found with that pattern"
+          echo ""
+          echo "Contents of build.gradle:"
+          cat build.gradle 2>/dev/null || echo "build.gradle not found or not readable"
+          echo ""
+          echo "Contents of settings.gradle.kts:"
+          cat settings.gradle.kts 2>/dev/null || echo "settings.gradle.kts not found or not readable"
+
+      - name: Check Java
+        run: |
+          echo "Java version:"
+          java -version 2>&1 || echo "Java check failed"
+          echo ""
+          echo "Java home:"
+          echo $JAVA_HOME
+
+      - name: Attempt simple gradle version check
+        run: |
+          echo "Trying gradle --version:"
+          gradle --version 2>&1 || echo "gradle command failed"
+          echo ""
+          echo "Trying ./gradlew --version:"
+          ./gradlew --version 2>&1 || echo "./gradlew command failed"
