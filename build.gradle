@@ -15,7 +15,7 @@ dependencies {
 }
 
 minecraft {
-    version = "2021.11"
+    version = "1.21.11"
     mappings {
         channel = "official"
         version = "1.21.11"
