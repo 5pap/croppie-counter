@@ -1,7 +1,17 @@
 plugins {
     id 'maven-publish'
-    id 'org.fabricmc.loom' version '1.4.6'
 }
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://maven.fabricmc.net/") }
+    }
+    dependencies {
+        classpath("org.fabricmc.loom:loom.gradle.plugin:1.4.6")
+    }
+}
+apply(plugin = "org.fabricmc.loom")
 
 repositories {
     mavenCentral()
