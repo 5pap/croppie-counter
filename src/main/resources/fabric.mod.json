@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "croppie_counter",
+  "version": "1.0.0",
+  "name": "Croppie Counter",
+  "description": "Displays the number of 'Croppie :3' items in your inventory with a movable HUD",
+  "authors": ["YourName"],
+  "contact": {
+    "homepage": "https://github.com/yourusername/croppie_counter",
+    "sources": "https://github.com/yourusername/croppie_counter"
+  },
+  "license": "MIT",
+  "icon": "assets/croppie_counter/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.croppie.CroppieCounter"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": ">=1.21.11",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
