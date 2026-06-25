@@ -1,7 +1,8 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         mavenCentral()
-        maven("https://maven.fabricmc.net/")
+        maven { url "https://maven.fabricmc.net/" }
     }
 }
 rootProject.name = "croppie_counter"

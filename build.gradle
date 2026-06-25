@@ -1,6 +1,6 @@
 plugins {
     id 'maven-publish'
-    id 'org.fabricmc.loom' version '1.4.6'
+    id 'loom' version '1.4.6'
 }
 
 repositories {
